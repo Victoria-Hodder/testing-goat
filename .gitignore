@@ -1,4 +1,4 @@
-dg.squlite3
+db.sqlite3
 testenv
 venv
 env
