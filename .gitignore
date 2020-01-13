@@ -1,0 +1,7 @@
+dg.squlite3
+testenv
+venv
+env
+geckodriver.log
+*.pyc
+.vscode
