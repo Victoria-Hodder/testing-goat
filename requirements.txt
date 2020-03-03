@@ -1,1 +1,4 @@
-Django==3.0.2
+Python==3.6
+Django==1.11
+Selenium==3.141.0
+geckodriver==0.26.0
