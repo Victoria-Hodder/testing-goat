@@ -1,0 +1,101 @@
+
+# access server environment
+ssh victoriah@157.230.96.40
+
+check with `sudo echo hi` and password
+
+# export server
+export SITENAME=staging.victorias-lists.website
+
+# access thiss
+cd ~/sites/$SITENAME
+cd ~/sites/staging.victorias-lists.website
+
+
+# check path
+pwd
+
+# for repo updates
+git pull
+
+# access virtual environment and runserver
+./virtualenv/bin/python manage.py runserver
+
+
+
+# to find out which shell
+`ps -p $$`
+
+# lists all files in the directory
+ls -shila
+
+# to run functional_tests
+ ./virtualenv/bin/python manage.py test functional_tests --failfast
+
+
+# running commands for my own machine
+ STAGING_SERVER=staging.victorias-lists.website:8000 ./manage.py test functional_tests \ --failfast
+
+ STAGING_SERVER=staging.victorias-lists.website:8000 ./manage.py runserver
+
+
+# nginx configuration 
+server {
+    listen 80;
+    server_name staging.victorias-lists.website;
+
+    location / {
+        proxy_pass http://localhost:8000;
+    }
+}
+
+# doing this in nano
+nano /etc/nginx/sites-available
+
+# saved in file "staging.victorias-lists.website"
+
+
+ERROR: ./manage.py: command not found
+
+# To give yourself execute permission for the file containing the script use the command:
+# chmod u+rwx filename.py
+
+chmod u+rwx manage.py
+
+
+ # need to have server running in the background
+
+
+# command for own laptop directory
+curl staging.victorias-lists.website:8000
+
+
+# "normal port-80 URL address of your server"
+157.230.96.40
+
+
+# debugging nginx:
+sudo nano /var/log/nginx/error.log
+
+# nginx error
+2020/04/16 09:15:45 [emerg] 12083#12083: open() "/etc/nginx/sites-enabled/stagi$
+
+# Create symbolic link:
+sudo ln -s /etc/nginx/sites-available/mysite.co.uk /etc/nginx/sites-enabled/
+
+
+sudo ln -s /etc/nginx/sites-available/staging.victorias-lists.website /etc/nginx/sites-enabled/
+
+
+sudo ln -s /etc/nginx/sites-available/staging.victorias-lists.website /etc/nginx/sites-enabled/staging.victorias-lists.website
+
+ln: failed to create symbolic link '/etc/nginx/sites-enabled/staging.victorias-lists.website': File exists
+
+sudo unlink /etc/nginx/sites-enabled/staging.victorias-lists.website
+
+
+
+find /etc/nginx/sites-available -xtype l
+
+rm /etc/nginx/sites-available
+find /etc/nginx/sites-available -xtype l -delete
