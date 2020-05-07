@@ -1,6 +1,12 @@
 
 # access server environment
 ssh victoriah@157.230.96.40
+ssh root@157.230.96.40
+
+# verbose
+ssh -v victoriah@157.230.96.40
+
+
 
 check with `sudo echo hi` and password
 
@@ -18,9 +24,14 @@ pwd
 # for repo updates
 git pull
 
-# access virtual environment and runserver
-./virtualenv/bin/python manage.py runserver
 
+# access virtual environment and runserver
+
+./virtualenv/bin/python manage.py runserver
+    --> this runs but nothing is there on the screen
+
+./virtualenv/bin/python manage.py runserver 0.0.0.0:8000
+    --> same for this
 
 
 # to find out which shell
@@ -37,6 +48,7 @@ ls -shila
  STAGING_SERVER=staging.victorias-lists.website:8000 ./manage.py test functional_tests \ --failfast
 
  STAGING_SERVER=staging.victorias-lists.website:8000 ./manage.py runserver
+ --> this runs
 
 
 # nginx configuration 
@@ -74,26 +86,23 @@ curl staging.victorias-lists.website:8000
 157.230.96.40
 
 
-# debugging nginx:
+
+
+
+## debugging nginx:
 sudo nano /var/log/nginx/error.log
 
 # nginx error
 2020/04/16 09:15:45 [emerg] 12083#12083: open() "/etc/nginx/sites-enabled/stagi$
 
 # Create symbolic link:
-sudo ln -s /etc/nginx/sites-available/mysite.co.uk /etc/nginx/sites-enabled/
-
-
-sudo ln -s /etc/nginx/sites-available/staging.victorias-lists.website /etc/nginx/sites-enabled/
-
-
+# Using absolute paths
 sudo ln -s /etc/nginx/sites-available/staging.victorias-lists.website /etc/nginx/sites-enabled/staging.victorias-lists.website
 
 ln: failed to create symbolic link '/etc/nginx/sites-enabled/staging.victorias-lists.website': File exists
 
+# To delete/remove link
 sudo unlink /etc/nginx/sites-enabled/staging.victorias-lists.website
-
-
 
 find /etc/nginx/sites-available -xtype l
 
