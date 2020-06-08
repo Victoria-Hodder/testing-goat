@@ -22,10 +22,10 @@ A user can create a to-do list
 For this project I am using pyenv (you can read about this here: https://github.com/pyenv/pyenv). For example (using linux terminal)
 
 # set up a new environment
-$ pyenv virtualenv 3.8.1 exampleenv 
+`$ pyenv virtualenv 3.8.1 exampleenv `
 
 # activate environment
-$ pyenv activate exampleenv
+`$ pyenv activate exampleenv`
 
 In order to install all nececsary libraries please:
 
