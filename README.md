@@ -1,6 +1,6 @@
 # Purpose
 
-I am using the very brilliant ["Obey The Testing Goat"](https://www.obeythetestinggoat.com) by H. Percival in order to practice TDD full stack Python/Django development.
+I am using the very brilliant ["Obey The Testing Goat"](https://www.obeythetestinggoat.com) by H. Percival in order to practice Test-driven, full-stack Python/Django development.
 
 # Setup
 
@@ -11,11 +11,14 @@ I assume Python 3.x or higher is installed.
 ```
 Python 3.6.0
 Django 1.11.13
+selenium 3.141.0
+nginx 1.14.0 
+gunicorn 20.0.4
 ```
 
 # Features
 
-A user can create a to-do list
+A user can create a to-do list.
 
 # Getting it to run
 
@@ -39,10 +42,19 @@ The app should now run on your local server. To test the different endpoints, pl
 
 # Testing
 
-The project makes use of unittesting.
+The project makes use of unittesting and functional tests.
 
 # Documentation
 
-For the Django Documentation: https://docs.djangoproject.com/en/2.2/
+Django: https://docs.djangoproject.com/en/2.2/
 
-For Python Documentation: https://docs.python.org/3/
+Python: https://docs.python.org/3/
+
+Nginx: https://nginx.org/en/docs/
+
+Gunicorn: https://docs.gunicorn.org/en/stable/ 
+
+# Limitations
+
+- There is not yet a feature to delete items
+- Currently I am having to skip test: `test_layout_and_styling` due to possible geckodriver issues
