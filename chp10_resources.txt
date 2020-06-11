@@ -4,3 +4,4 @@ What is deployment, anyway? https://youtu.be/8vstov3Y7uE
 Assets in Django without losing your hair: https://youtu.be/E613X3RBegI
 NGINX crash course https://www.youtube.com/watch?v=WC2-hNNBWII
 Removing symbolic links: https://linuxize.com/post/how-to-remove-symbolic-links-in-linux/ 
+Gunicorn: https://www.fullstackpython.com/green-unicorn-gunicorn.html
