@@ -4,3 +4,4 @@ geckodriver.log
 static
 server_commands.txt
 *.gz
+.env
