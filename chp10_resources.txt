@@ -1,7 +1,11 @@
-Internet 101: Kahn academy https://www.youtube.com/playlist?list=PLSQl0a2vh4HD8wtmKZh0nKOsOvP1KYaNO 
+Internet 101: Kahn academy 
+    https://www.youtube.com/playlist?list=PLSQl0a2vh4HD8wtmKZh0nKOsOvP1KYaNO 
 Intro to SSH: https://www.youtube.com/watch?v=zlv9dI-9g1U
 What is deployment, anyway? https://youtu.be/8vstov3Y7uE
 Assets in Django without losing your hair: https://youtu.be/E613X3RBegI
 NGINX crash course https://www.youtube.com/watch?v=WC2-hNNBWII
 Removing symbolic links: https://linuxize.com/post/how-to-remove-symbolic-links-in-linux/ 
 Gunicorn: https://www.fullstackpython.com/green-unicorn-gunicorn.html
+How to Enable or Disable Services in Ubuntu Systemd/Upstart: 
+    https://linoxide.com/linux-how-to/enable-disable-services-ubuntu-systemd-upstart/
+Intro to systemd: https://wiki.archlinux.org/index.php/Systemd
