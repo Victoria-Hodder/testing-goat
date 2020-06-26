@@ -1,0 +1,15 @@
+[Unit]
+Description=Gunicorn server for DOMAIN
+
+[Service]
+Restart=on-failure
+User=vrhodder
+WorkingDirectory=/home/vrhodder/sites/DOMAIN
+EnvironmentFile=/home/vrhodder/sites/DOMAIN/.env
+
+ExecStart=/home/vrhodder/sites/DOMAIN/virtualenv/bin/gunicorn \
+    --bind unix:/tmp/DOMAIN.socket \
+    mysite.wsgi:application
+
+[Install]
+WantedBy=multi-user.target
