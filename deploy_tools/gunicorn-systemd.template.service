@@ -3,11 +3,11 @@ Description=Gunicorn server for DOMAIN
 
 [Service]
 Restart=on-failure
-User=vrhodder
-WorkingDirectory=/home/vrhodder/sites/DOMAIN
-EnvironmentFile=/home/vrhodder/sites/DOMAIN/.env
+User=victoriah
+WorkingDirectory=/home/victoriah/sites/DOMAIN
+EnvironmentFile=/home/victoriah/sites/DOMAIN/.env
 
-ExecStart=/home/vrhodder/sites/DOMAIN/virtualenv/bin/gunicorn \
+ExecStart=/home/victoriah/sites/DOMAIN/virtualenv/bin/gunicorn \
     --bind unix:/tmp/DOMAIN.socket \
     mysite.wsgi:application
 
