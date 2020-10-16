@@ -8,6 +8,7 @@ DUPLICATE_ITEM_ERROR = "You've already got this in your list"
 class ItemForm(forms.models.ModelForm):
 
     class Meta:
+        # configuration class
         model = Item
         fields = ('text',)
         widgets = {
@@ -20,6 +21,7 @@ class ItemForm(forms.models.ModelForm):
             'text': {'required': EMPTY_ITEM_ERROR} 
         }
 
+    # custom save method to save item to a specific list
     def save(self, for_list):
         self.instance.list = for_list
         return super().save()
