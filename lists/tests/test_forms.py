@@ -26,6 +26,7 @@ class ItemFormTest(TestCase):
         self.assertEqual(new_item.text, 'do me')
         self.assertEqual(new_item.list, list_)
 
+        # tell the form's save method what list it should save to
 
 class ExistingListItemFormTest(TestCase):
 

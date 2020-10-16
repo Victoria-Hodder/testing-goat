@@ -5,7 +5,6 @@ from lists.forms import (
     DUPLICATE_ITEM_ERROR, EMPTY_ITEM_ERROR,
     ExistingListItemForm, ItemForm
 )
-from unittest import skip
 
 class HomePageTest(TestCase):
 

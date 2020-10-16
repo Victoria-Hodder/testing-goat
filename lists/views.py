@@ -7,7 +7,6 @@ from lists.models import Item, List
 def home_page(request):
     return render(request, 'lists/home.html', {'form': ItemForm()})
 
-
 def new_list(request):
     form = ItemForm(data=request.POST)    
     if form.is_valid():  
