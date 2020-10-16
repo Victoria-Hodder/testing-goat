@@ -1,6 +1,6 @@
 from django.core.exceptions import ValidationError
 from django.shortcuts import render, redirect
-from django.views.generic import FormView
+from django.views.generic import FormView, CreateView, DetailView
 
 from lists.forms import ExistingListItemForm, ItemForm
 from lists.models import Item, List
@@ -10,22 +10,24 @@ class HomePageView(FormView):
     template_name = 'lists/home.html'
     form_class = ItemForm
 
+"""
+Note from author:
+Inheritance implies an "is-a" relationship, and it’s probably not meaningful to 
+say that our new list view "is-a" home page view, so, best not to do this. 
+"""
 
-def new_list(request):
-    form = ItemForm(data=request.POST)    
-    if form.is_valid():  
+class NewListView(CreateView, HomePageView):
+
+    def form_valid(self, form):
         list_ = List.objects.create()
         form.save(for_list=list_)
         return redirect(list_)
-    else:
-        return render(request, 'lists/home.html', {"form": form})
 
-def view_list(request, list_id):
-    list_ = List.objects.get(id=list_id)
-    form = ExistingListItemForm(for_list=list_)
-    if request.method == 'POST':
-        form = ExistingListItemForm(for_list=list_, data=request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect(list_)    
-    return render(request, 'lists/list.html', {'list': list_, 'form': form})
+class ViewAndAddToList(DetailView, CreateView):
+    model = List
+    template_name = 'lists/list.html'
+    form_class = ExistingListItemForm
+
+    def get_form(self):
+        self.object = self.get_object()
+        return self.form_class(for_list=self.object, data=self.request.POST)
