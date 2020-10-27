@@ -1,7 +1,7 @@
 db.sqlite3
 geckodriver.log
 *.pyc
-static
+/static
 server_commands.txt
 *.gz
 .env
