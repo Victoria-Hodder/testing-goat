@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
@@ -9,23 +8,25 @@
 </head>
 
 <body>
-    <div id="qunit-fixture"></div>
-
-    <form>
-        <input name="text" />
-        <div class="has-error">Error text</div>
-    </form>
-
-    <script src="../jquery-3.5.1.min.js"></script>
+    <div id="qunit"></div>
+    <div id="qunit-fixture">
+        <form>
+            <input name="text" />
+            <div class="has-error">Error text</div>
+        </form>
+    </div>
+    
+    <script src="../jquery-3.5.1.min.js"></script> 
     <script src="qunit-2.6.0.js"></script>
 
     <script>
 
         QUnit.test("smoke test", function (assert) {
-            assert.equal($('.has-error').is(':visible'), true);
-            $('.has-error').hide();
-            assert.equal($('.has-error').is(':visible'), false);
+            assert.equal($('.has-error').is(':visible'), true);   
+            $('.has-error').hide();  
+            assert.equal($('.has-error').is(':visible'), false);  
         });
+
         QUnit.test("smoke test 2", function (assert) {
             assert.equal($('.has-error').is(':visible'), true);
             $('.has-error').hide();
@@ -34,5 +35,4 @@
 
     </script>
 </body>
-
 </html>
