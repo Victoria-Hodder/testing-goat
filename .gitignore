@@ -5,3 +5,4 @@ geckodriver.log
 server_commands.txt
 *.gz
 .env
+env_vars
