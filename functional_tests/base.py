@@ -3,7 +3,7 @@ from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from selenium import webdriver
 from selenium.common.exceptions import WebDriverException
 import time
-from .server_tools import reset_databas
+from .server_tools import reset_database
 
 MAX_WAIT = 10
 
